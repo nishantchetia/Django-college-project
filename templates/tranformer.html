@@ -1,0 +1,16 @@
+{% extends "base.HTML" %}
+{% load static %}
+{% block title %}Hydraulic oil{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/data.css' %}">
+{% endblock %}
+
+{% block content %}
+    <br><br><br><br><br><br>
+{% for item in tfO %}
+ {% ifchanged item.company %}
+      <h1> {{ item.company }} </h1>
+ {% endifchanged %}
+      <div> {{ item }} </div>
+{% endfor %}
+{% endblock %}
